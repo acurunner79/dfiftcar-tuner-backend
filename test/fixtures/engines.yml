@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  engine_code: MyString
+  horsepower: MyString
+
+two:
+  engine_code: MyString
+  horsepower: MyString

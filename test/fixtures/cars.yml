@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  year: MyString
+  make: MyString
+  model: MyString
+  engine: one
+  clutch: one
+  differential: one
+  hand_brake: one
+  rollcage: one
+  suspension: one
+  user: one
+
+two:
+  year: MyString
+  make: MyString
+  model: MyString
+  engine: two
+  clutch: two
+  differential: two
+  hand_brake: two
+  rollcage: two
+  suspension: two
+  user: two

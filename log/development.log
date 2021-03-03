@@ -1,0 +1,1111 @@
+  [1m[35m (906.7ms)[0m  [1m[35mCREATE DATABASE "driftcar_tuner_app_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (258.7ms)[0m  [1m[35mCREATE DATABASE "driftcar_tuner_app_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (66.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (25.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3384330133980964875)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEngines (20210302174324)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (26.7ms)[0m  [1m[35mCREATE TABLE "engines" ("id" bigserial primary key, "engine_code" character varying, "horsepower" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210302174324"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateClutches (20210302174707)
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.9ms)[0m  [1m[35mCREATE TABLE "clutches" ("id" bigserial primary key, "stage" character varying, "brand" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210302174707"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDifferentials (20210302174756)
+  [1m[36mTRANSACTION (11.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (27.4ms)[0m  [1m[35mCREATE TABLE "differentials" ("id" bigserial primary key, "type" character varying, "brand" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210302174756"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHandBrakes (20210302174904)
+  [1m[36mTRANSACTION (14.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE "hand_brakes" ("id" bigserial primary key, "type" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210302174904"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRollcages (20210302175031)
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (36.8ms)[0m  [1m[35mCREATE TABLE "rollcages" ("id" bigserial primary key, "type" character varying, "brand" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210302175031"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSuspensions (20210302175119)
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (19.2ms)[0m  [1m[35mCREATE TABLE "suspensions" ("id" bigserial primary key, "type" character varying, "brand" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210302175119"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCars (20210302175711)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3384330133980964875)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3384330133980964875)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCars (20210302175711)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (86.4ms)[0m  [1m[35mCREATE TABLE "cars" ("id" bigserial primary key, "year" character varying, "make" character varying, "model" character varying, "engine_id" bigint NOT NULL, "clutch_id" bigint, "differential_id" bigint NOT NULL, "hand_brake_id" bigint NOT NULL, "rollcage_id" bigint NOT NULL, "suspension_id" bigint NOT NULL, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_10c903b46e"
+FOREIGN KEY ("engine_id")
+  REFERENCES "engines" ("id")
+, CONSTRAINT "fk_rails_903fbef22a"
+FOREIGN KEY ("differential_id")
+  REFERENCES "differentials" ("id")
+, CONSTRAINT "fk_rails_5646586b16"
+FOREIGN KEY ("hand_brake_id")
+  REFERENCES "hand_brakes" ("id")
+, CONSTRAINT "fk_rails_a7b5f9efd5"
+FOREIGN KEY ("rollcage_id")
+  REFERENCES "rollcages" ("id")
+, CONSTRAINT "fk_rails_17918361a6"
+FOREIGN KEY ("suspension_id")
+  REFERENCES "suspensions" ("id")
+, CONSTRAINT "fk_rails_7eccb46500"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3384330133980964875)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3384330133980964875)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCars (20210302175711)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.2ms)[0m  [1m[35mCREATE TABLE "cars" ("id" bigserial primary key, "year" character varying, "make" character varying, "model" character varying, "engine_id" bigint NOT NULL, "clutch_id" bigint, "differential_id" bigint NOT NULL, "hand_brake_id" bigint NOT NULL, "rollcage_id" bigint NOT NULL, "suspension_id" bigint NOT NULL, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_10c903b46e"
+FOREIGN KEY ("engine_id")
+  REFERENCES "engines" ("id")
+, CONSTRAINT "fk_rails_903fbef22a"
+FOREIGN KEY ("differential_id")
+  REFERENCES "differentials" ("id")
+, CONSTRAINT "fk_rails_5646586b16"
+FOREIGN KEY ("hand_brake_id")
+  REFERENCES "hand_brakes" ("id")
+, CONSTRAINT "fk_rails_a7b5f9efd5"
+FOREIGN KEY ("rollcage_id")
+  REFERENCES "rollcages" ("id")
+, CONSTRAINT "fk_rails_17918361a6"
+FOREIGN KEY ("suspension_id")
+  REFERENCES "suspensions" ("id")
+, CONSTRAINT "fk_rails_7eccb46500"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3384330133980964875)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3384330133980964875)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCars (20210302175711)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (28.4ms)[0m  [1m[35mCREATE TABLE "cars" ("id" bigserial primary key, "year" character varying, "make" character varying, "model" character varying, "engine_id" bigint NOT NULL, "clutch_id" bigint, "differential_id" bigint NOT NULL, "hand_brake_id" bigint NOT NULL, "rollcage_id" bigint NOT NULL, "suspension_id" bigint NOT NULL, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_10c903b46e"
+FOREIGN KEY ("engine_id")
+  REFERENCES "engines" ("id")
+, CONSTRAINT "fk_rails_903fbef22a"
+FOREIGN KEY ("differential_id")
+  REFERENCES "differentials" ("id")
+, CONSTRAINT "fk_rails_5646586b16"
+FOREIGN KEY ("hand_brake_id")
+  REFERENCES "hand_brakes" ("id")
+, CONSTRAINT "fk_rails_a7b5f9efd5"
+FOREIGN KEY ("rollcage_id")
+  REFERENCES "rollcages" ("id")
+, CONSTRAINT "fk_rails_17918361a6"
+FOREIGN KEY ("suspension_id")
+  REFERENCES "suspensions" ("id")
+, CONSTRAINT "fk_rails_7eccb46500"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3384330133980964875)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (5.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3384330133980964875)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUser (20210302175821)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(3384330133980964875)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3384330133980964875)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20210302175821)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (29.8ms)[0m  [1m[35mCREATE TABLE "user" ("id" bigserial primary key, "car_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_7e69fa837a"
+FOREIGN KEY ("car_id")
+  REFERENCES "cars" ("id")
+)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3384330133980964875)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3384330133980964875)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20210302175821)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "user" ("id" bigserial primary key, "car_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_7e69fa837a"
+FOREIGN KEY ("car_id")
+  REFERENCES "cars" ("id")
+)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3384330133980964875)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (6.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (8.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-03-02 18:17:23.302113"], ["updated_at", "2021-03-02 18:17:23.302113"]]
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (54.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "driftcar_tuner_app_api_development"[0m
+  [1m[35m (46.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "driftcar_tuner_app_api_test"[0m
+  [1m[35m (195.4ms)[0m  [1m[35mCREATE DATABASE "driftcar_tuner_app_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (66.6ms)[0m  [1m[35mCREATE DATABASE "driftcar_tuner_app_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3384330133980964875)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEngines (20210302181820)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.3ms)[0m  [1m[35mCREATE TABLE "engines" ("id" bigserial primary key, "engine_code" character varying, "horsepower" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210302181820"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateClutches (20210302181841)
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.6ms)[0m  [1m[35mCREATE TABLE "clutches" ("id" bigserial primary key, "stage" character varying, "brand" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210302181841"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDifferentials (20210302181859)
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.6ms)[0m  [1m[35mCREATE TABLE "differentials" ("id" bigserial primary key, "type" character varying, "brand" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210302181859"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHandBrakes (20210302181915)
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (18.5ms)[0m  [1m[35mCREATE TABLE "hand_brakes" ("id" bigserial primary key, "type" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210302181915"]]
+  [1m[36mTRANSACTION (10.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRollcages (20210302181928)
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.4ms)[0m  [1m[35mCREATE TABLE "rollcages" ("id" bigserial primary key, "type" character varying, "brand" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210302181928"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSuspensions (20210302181945)
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.7ms)[0m  [1m[35mCREATE TABLE "suspensions" ("id" bigserial primary key, "type" character varying, "brand" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210302181945"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCars (20210302182053)
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (27.0ms)[0m  [1m[35mCREATE TABLE "cars" ("id" bigserial primary key, "year" character varying, "make" character varying, "model" character varying, "engine_id" bigint NOT NULL, "clutch_id" bigint NOT NULL, "differential_id" bigint NOT NULL, "hand_brake_id" bigint NOT NULL, "rollcage_id" bigint NOT NULL, "suspension_id" bigint NOT NULL, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_10c903b46e"
+FOREIGN KEY ("engine_id")
+  REFERENCES "engines" ("id")
+, CONSTRAINT "fk_rails_91f4101df1"
+FOREIGN KEY ("clutch_id")
+  REFERENCES "clutches" ("id")
+, CONSTRAINT "fk_rails_903fbef22a"
+FOREIGN KEY ("differential_id")
+  REFERENCES "differentials" ("id")
+, CONSTRAINT "fk_rails_5646586b16"
+FOREIGN KEY ("hand_brake_id")
+  REFERENCES "hand_brakes" ("id")
+, CONSTRAINT "fk_rails_a7b5f9efd5"
+FOREIGN KEY ("rollcage_id")
+  REFERENCES "rollcages" ("id")
+, CONSTRAINT "fk_rails_17918361a6"
+FOREIGN KEY ("suspension_id")
+  REFERENCES "suspensions" ("id")
+, CONSTRAINT "fk_rails_7eccb46500"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3384330133980964875)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3384330133980964875)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20210302182134)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "cars_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_c8460dbe08"
+FOREIGN KEY ("cars_id")
+  REFERENCES "cars" ("id")
+)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3384330133980964875)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3384330133980964875)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCars (20210302182345)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (32.1ms)[0m  [1m[35mCREATE TABLE "cars" ("id" bigserial primary key, "year" character varying, "make" character varying, "model" character varying, "engine_id" bigint NOT NULL, "clutch_id" bigint NOT NULL, "differential_id" bigint NOT NULL, "hand_brake_id" bigint NOT NULL, "rollcage_id" bigint NOT NULL, "suspension_id" bigint NOT NULL, "users_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_10c903b46e"
+FOREIGN KEY ("engine_id")
+  REFERENCES "engines" ("id")
+, CONSTRAINT "fk_rails_91f4101df1"
+FOREIGN KEY ("clutch_id")
+  REFERENCES "clutches" ("id")
+, CONSTRAINT "fk_rails_903fbef22a"
+FOREIGN KEY ("differential_id")
+  REFERENCES "differentials" ("id")
+, CONSTRAINT "fk_rails_5646586b16"
+FOREIGN KEY ("hand_brake_id")
+  REFERENCES "hand_brakes" ("id")
+, CONSTRAINT "fk_rails_a7b5f9efd5"
+FOREIGN KEY ("rollcage_id")
+  REFERENCES "rollcages" ("id")
+, CONSTRAINT "fk_rails_17918361a6"
+FOREIGN KEY ("suspension_id")
+  REFERENCES "suspensions" ("id")
+, CONSTRAINT "fk_rails_96e87cd559"
+FOREIGN KEY ("users_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3384330133980964875)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3384330133980964875)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20210302182513)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (19.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "car_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_04fbd72ed7"
+FOREIGN KEY ("car_id")
+  REFERENCES "cars" ("id")
+)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3384330133980964875)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-03-02 18:27:57.147308"], ["updated_at", "2021-03-02 18:27:57.147308"]]
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (28.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "driftcar_tuner_app_api_development"[0m
+  [1m[35m (17.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "driftcar_tuner_app_api_test"[0m
+  [1m[35m (204.2ms)[0m  [1m[35mCREATE DATABASE "driftcar_tuner_app_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (62.9ms)[0m  [1m[35mCREATE DATABASE "driftcar_tuner_app_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (32.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (21.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3384330133980964875)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEngines (20210302181820)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.4ms)[0m  [1m[35mCREATE TABLE "engines" ("id" bigserial primary key, "engine_code" character varying, "horsepower" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210302181820"]]
+  [1m[36mTRANSACTION (11.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateClutches (20210302181841)
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE TABLE "clutches" ("id" bigserial primary key, "stage" character varying, "brand" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210302181841"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDifferentials (20210302181859)
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.1ms)[0m  [1m[35mCREATE TABLE "differentials" ("id" bigserial primary key, "type" character varying, "brand" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210302181859"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHandBrakes (20210302181915)
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (22.3ms)[0m  [1m[35mCREATE TABLE "hand_brakes" ("id" bigserial primary key, "type" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210302181915"]]
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRollcages (20210302181928)
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.1ms)[0m  [1m[35mCREATE TABLE "rollcages" ("id" bigserial primary key, "type" character varying, "brand" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210302181928"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSuspensions (20210302181945)
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (19.8ms)[0m  [1m[35mCREATE TABLE "suspensions" ("id" bigserial primary key, "type" character varying, "brand" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210302181945"]]
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCars (20210302182618)
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (42.0ms)[0m  [1m[35mCREATE TABLE "cars" ("id" bigserial primary key, "year" character varying, "make" character varying, "model" character varying, "engine_id" bigint NOT NULL, "clutch_id" bigint NOT NULL, "differential_id" bigint NOT NULL, "hand_brake_id" bigint NOT NULL, "rollcage_id" bigint NOT NULL, "suspension_id" bigint NOT NULL, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_10c903b46e"
+FOREIGN KEY ("engine_id")
+  REFERENCES "engines" ("id")
+, CONSTRAINT "fk_rails_91f4101df1"
+FOREIGN KEY ("clutch_id")
+  REFERENCES "clutches" ("id")
+, CONSTRAINT "fk_rails_903fbef22a"
+FOREIGN KEY ("differential_id")
+  REFERENCES "differentials" ("id")
+, CONSTRAINT "fk_rails_5646586b16"
+FOREIGN KEY ("hand_brake_id")
+  REFERENCES "hand_brakes" ("id")
+, CONSTRAINT "fk_rails_a7b5f9efd5"
+FOREIGN KEY ("rollcage_id")
+  REFERENCES "rollcages" ("id")
+, CONSTRAINT "fk_rails_17918361a6"
+FOREIGN KEY ("suspension_id")
+  REFERENCES "suspensions" ("id")
+, CONSTRAINT "fk_rails_7eccb46500"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3384330133980964875)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3384330133980964875)[0m
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20210302203641)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (24.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210302203641"]]
+  [1m[36mTRANSACTION (22.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCars (20210302203752)
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (26.5ms)[0m  [1m[35mCREATE TABLE "cars" ("id" bigserial primary key, "year" character varying, "make" character varying, "model" character varying, "engine_id" bigint NOT NULL, "clutch_id" bigint NOT NULL, "differential_id" bigint NOT NULL, "hand_brake_id" bigint NOT NULL, "rollcage_id" bigint NOT NULL, "suspension_id" bigint NOT NULL, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_10c903b46e"
+FOREIGN KEY ("engine_id")
+  REFERENCES "engines" ("id")
+, CONSTRAINT "fk_rails_91f4101df1"
+FOREIGN KEY ("clutch_id")
+  REFERENCES "clutches" ("id")
+, CONSTRAINT "fk_rails_903fbef22a"
+FOREIGN KEY ("differential_id")
+  REFERENCES "differentials" ("id")
+, CONSTRAINT "fk_rails_5646586b16"
+FOREIGN KEY ("hand_brake_id")
+  REFERENCES "hand_brakes" ("id")
+, CONSTRAINT "fk_rails_a7b5f9efd5"
+FOREIGN KEY ("rollcage_id")
+  REFERENCES "rollcages" ("id")
+, CONSTRAINT "fk_rails_17918361a6"
+FOREIGN KEY ("suspension_id")
+  REFERENCES "suspensions" ("id")
+, CONSTRAINT "fk_rails_7eccb46500"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE INDEX "index_cars_on_engine_id" ON "cars" ("engine_id")[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE INDEX "index_cars_on_clutch_id" ON "cars" ("clutch_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE INDEX "index_cars_on_differential_id" ON "cars" ("differential_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_cars_on_hand_brake_id" ON "cars" ("hand_brake_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE INDEX "index_cars_on_rollcage_id" ON "cars" ("rollcage_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_cars_on_suspension_id" ON "cars" ("suspension_id")[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE INDEX "index_cars_on_user_id" ON "cars" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210302203752"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-03-02 20:38:06.546318"], ["updated_at", "2021-03-02 20:38:06.546318"]]
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3384330133980964875)[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3384330133980964875)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddForeignKeyToUsers (20210302204112)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (6.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210302204112"]]
+  [1m[36mTRANSACTION (11.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3384330133980964875)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3384330133980964875)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3384330133980964875)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3384330133980964875)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddForeignKeyToUsers2 (20210302204716)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.0ms)[0m  [1m[35mALTER TABLE "users" ADD "car_id" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210302204716"]]
+  [1m[36mTRANSACTION (11.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(3384330133980964875)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2021-03-02 17:32:44 -0600
+  [1m[35m (6.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/djsmoothbackupmac/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/djsmoothbackupmac/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 13.7ms | Allocations: 409)
+Completed 200 OK in 36ms (Views: 22.5ms | ActiveRecord: 0.0ms | Allocations: 3497)
+
+
+Started GET "/cars" for ::1 at 2021-03-02 17:32:57 -0600
+Processing by CarsController#index as HTML
+  [1m[36mCar Load (25.0ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/controllers/cars_controller.rb:8:in `index'
+Completed 200 OK in 38ms (Views: 2.8ms | ActiveRecord: 25.0ms | Allocations: 3382)
+
+
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEngine Create (7.6ms)[0m  [1m[32mINSERT INTO "engines" ("engine_code", "horsepower", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["engine_code", "Redtop SR20DET"], ["horsepower", "205HP"], ["created_at", "2021-03-02 23:33:18.664609"], ["updated_at", "2021-03-02 23:33:18.664609"]]
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEngine Create (0.4ms)[0m  [1m[32mINSERT INTO "engines" ("engine_code", "horsepower", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["engine_code", "Notchtop SR20DET"], ["horsepower", "247HP"], ["created_at", "2021-03-02 23:33:18.681869"], ["updated_at", "2021-03-02 23:33:18.681869"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEngine Create (0.3ms)[0m  [1m[32mINSERT INTO "engines" ("engine_code", "horsepower", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["engine_code", "Silver Top 4AGE"], ["horsepower", "155HP"], ["created_at", "2021-03-02 23:33:18.685617"], ["updated_at", "2021-03-02 23:33:18.685617"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEngine Create (0.3ms)[0m  [1m[32mINSERT INTO "engines" ("engine_code", "horsepower", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["engine_code", "BP 1.8L"], ["horsepower", "140HP"], ["created_at", "2021-03-02 23:33:18.689057"], ["updated_at", "2021-03-02 23:33:18.689057"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClutch Create (2.3ms)[0m  [1m[32mINSERT INTO "clutches" ("stage", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["stage", "Stage 1"], ["brand", "SPEC Clutches"], ["created_at", "2021-03-02 23:33:18.703607"], ["updated_at", "2021-03-02 23:33:18.703607"]]
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClutch Create (0.4ms)[0m  [1m[32mINSERT INTO "clutches" ("stage", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["stage", "Stage 2"], ["brand", "Exedy Racing Clutch"], ["created_at", "2021-03-02 23:33:18.716758"], ["updated_at", "2021-03-02 23:33:18.716758"]]
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClutch Create (0.4ms)[0m  [1m[32mINSERT INTO "clutches" ("stage", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["stage", "Stage 3"], ["brand", "SPEC Clutches"], ["created_at", "2021-03-02 23:33:18.727253"], ["updated_at", "2021-03-02 23:33:18.727253"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClutch Create (0.3ms)[0m  [1m[32mINSERT INTO "clutches" ("stage", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["stage", "Stage 4"], ["brand", "FXRacing Clutch Kits"], ["created_at", "2021-03-02 23:33:18.732240"], ["updated_at", "2021-03-02 23:33:18.732240"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEngine Create (0.8ms)[0m  [1m[32mINSERT INTO "engines" ("engine_code", "horsepower", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["engine_code", "Redtop SR20DET"], ["horsepower", "205HP"], ["created_at", "2021-03-02 23:34:43.062030"], ["updated_at", "2021-03-02 23:34:43.062030"]]
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEngine Create (0.5ms)[0m  [1m[32mINSERT INTO "engines" ("engine_code", "horsepower", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["engine_code", "Notchtop SR20DET"], ["horsepower", "247HP"], ["created_at", "2021-03-02 23:34:43.073050"], ["updated_at", "2021-03-02 23:34:43.073050"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEngine Create (0.4ms)[0m  [1m[32mINSERT INTO "engines" ("engine_code", "horsepower", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["engine_code", "Silver Top 4AGE"], ["horsepower", "155HP"], ["created_at", "2021-03-02 23:34:43.077213"], ["updated_at", "2021-03-02 23:34:43.077213"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEngine Create (0.4ms)[0m  [1m[32mINSERT INTO "engines" ("engine_code", "horsepower", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["engine_code", "BP 1.8L"], ["horsepower", "140HP"], ["created_at", "2021-03-02 23:34:43.081045"], ["updated_at", "2021-03-02 23:34:43.081045"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClutch Create (2.1ms)[0m  [1m[32mINSERT INTO "clutches" ("stage", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["stage", "Stage 1"], ["brand", "SPEC Clutches"], ["created_at", "2021-03-02 23:34:43.094557"], ["updated_at", "2021-03-02 23:34:43.094557"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClutch Create (0.4ms)[0m  [1m[32mINSERT INTO "clutches" ("stage", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["stage", "Stage 2"], ["brand", "Exedy Racing Clutch"], ["created_at", "2021-03-02 23:34:43.101115"], ["updated_at", "2021-03-02 23:34:43.101115"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClutch Create (0.3ms)[0m  [1m[32mINSERT INTO "clutches" ("stage", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["stage", "Stage 3"], ["brand", "SPEC Clutches"], ["created_at", "2021-03-02 23:34:43.105069"], ["updated_at", "2021-03-02 23:34:43.105069"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClutch Create (0.3ms)[0m  [1m[32mINSERT INTO "clutches" ("stage", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["stage", "Stage 4"], ["brand", "FXRacing Clutch Kits"], ["created_at", "2021-03-02 23:34:43.108802"], ["updated_at", "2021-03-02 23:34:43.108802"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEngine Create (0.8ms)[0m  [1m[32mINSERT INTO "engines" ("engine_code", "horsepower", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["engine_code", "Redtop SR20DET"], ["horsepower", "205HP"], ["created_at", "2021-03-02 23:36:17.319272"], ["updated_at", "2021-03-02 23:36:17.319272"]]
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEngine Create (0.4ms)[0m  [1m[32mINSERT INTO "engines" ("engine_code", "horsepower", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["engine_code", "Notchtop SR20DET"], ["horsepower", "247HP"], ["created_at", "2021-03-02 23:36:17.330101"], ["updated_at", "2021-03-02 23:36:17.330101"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEngine Create (0.3ms)[0m  [1m[32mINSERT INTO "engines" ("engine_code", "horsepower", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["engine_code", "Silver Top 4AGE"], ["horsepower", "155HP"], ["created_at", "2021-03-02 23:36:17.334052"], ["updated_at", "2021-03-02 23:36:17.334052"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEngine Create (0.3ms)[0m  [1m[32mINSERT INTO "engines" ("engine_code", "horsepower", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["engine_code", "BP 1.8L"], ["horsepower", "140HP"], ["created_at", "2021-03-02 23:36:17.337416"], ["updated_at", "2021-03-02 23:36:17.337416"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClutch Create (0.5ms)[0m  [1m[32mINSERT INTO "clutches" ("stage", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["stage", "Stage 1"], ["brand", "SPEC Clutches"], ["created_at", "2021-03-02 23:36:17.349660"], ["updated_at", "2021-03-02 23:36:17.349660"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClutch Create (0.3ms)[0m  [1m[32mINSERT INTO "clutches" ("stage", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["stage", "Stage 2"], ["brand", "Exedy Racing Clutch"], ["created_at", "2021-03-02 23:36:17.353877"], ["updated_at", "2021-03-02 23:36:17.353877"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClutch Create (1.8ms)[0m  [1m[32mINSERT INTO "clutches" ("stage", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["stage", "Stage 3"], ["brand", "SPEC Clutches"], ["created_at", "2021-03-02 23:36:17.357451"], ["updated_at", "2021-03-02 23:36:17.357451"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClutch Create (0.3ms)[0m  [1m[32mINSERT INTO "clutches" ("stage", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["stage", "Stage 4"], ["brand", "FXRacing Clutch Kits"], ["created_at", "2021-03-02 23:36:17.362808"], ["updated_at", "2021-03-02 23:36:17.362808"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEngine Create (0.8ms)[0m  [1m[32mINSERT INTO "engines" ("engine_code", "horsepower", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["engine_code", "Redtop SR20DET"], ["horsepower", "205HP"], ["created_at", "2021-03-02 23:36:48.223284"], ["updated_at", "2021-03-02 23:36:48.223284"]]
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEngine Create (0.4ms)[0m  [1m[32mINSERT INTO "engines" ("engine_code", "horsepower", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["engine_code", "Notchtop SR20DET"], ["horsepower", "247HP"], ["created_at", "2021-03-02 23:36:48.233993"], ["updated_at", "2021-03-02 23:36:48.233993"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEngine Create (0.4ms)[0m  [1m[32mINSERT INTO "engines" ("engine_code", "horsepower", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["engine_code", "Silver Top 4AGE"], ["horsepower", "155HP"], ["created_at", "2021-03-02 23:36:48.238088"], ["updated_at", "2021-03-02 23:36:48.238088"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEngine Create (0.3ms)[0m  [1m[32mINSERT INTO "engines" ("engine_code", "horsepower", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["engine_code", "BP 1.8L"], ["horsepower", "140HP"], ["created_at", "2021-03-02 23:36:48.242051"], ["updated_at", "2021-03-02 23:36:48.242051"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClutch Create (0.5ms)[0m  [1m[32mINSERT INTO "clutches" ("stage", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["stage", "Stage 1"], ["brand", "SPEC Clutches"], ["created_at", "2021-03-02 23:36:48.254836"], ["updated_at", "2021-03-02 23:36:48.254836"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClutch Create (0.3ms)[0m  [1m[32mINSERT INTO "clutches" ("stage", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["stage", "Stage 2"], ["brand", "Exedy Racing Clutch"], ["created_at", "2021-03-02 23:36:48.259217"], ["updated_at", "2021-03-02 23:36:48.259217"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClutch Create (0.3ms)[0m  [1m[32mINSERT INTO "clutches" ("stage", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["stage", "Stage 3"], ["brand", "SPEC Clutches"], ["created_at", "2021-03-02 23:36:48.262867"], ["updated_at", "2021-03-02 23:36:48.262867"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClutch Create (0.3ms)[0m  [1m[32mINSERT INTO "clutches" ("stage", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["stage", "Stage 4"], ["brand", "FXRacing Clutch Kits"], ["created_at", "2021-03-02 23:36:48.266208"], ["updated_at", "2021-03-02 23:36:48.266208"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEngine Create (0.8ms)[0m  [1m[32mINSERT INTO "engines" ("engine_code", "horsepower", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["engine_code", "Redtop SR20DET"], ["horsepower", "205HP"], ["created_at", "2021-03-02 23:38:07.643570"], ["updated_at", "2021-03-02 23:38:07.643570"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEngine Create (0.5ms)[0m  [1m[32mINSERT INTO "engines" ("engine_code", "horsepower", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["engine_code", "Notchtop SR20DET"], ["horsepower", "247HP"], ["created_at", "2021-03-02 23:38:07.649054"], ["updated_at", "2021-03-02 23:38:07.649054"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEngine Create (0.3ms)[0m  [1m[32mINSERT INTO "engines" ("engine_code", "horsepower", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["engine_code", "Silver Top 4AGE"], ["horsepower", "155HP"], ["created_at", "2021-03-02 23:38:07.653738"], ["updated_at", "2021-03-02 23:38:07.653738"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEngine Create (0.4ms)[0m  [1m[32mINSERT INTO "engines" ("engine_code", "horsepower", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["engine_code", "BP 1.8L"], ["horsepower", "140HP"], ["created_at", "2021-03-02 23:38:07.657625"], ["updated_at", "2021-03-02 23:38:07.657625"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClutch Create (0.6ms)[0m  [1m[32mINSERT INTO "clutches" ("stage", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["stage", "Stage 1"], ["brand", "SPEC Clutches"], ["created_at", "2021-03-02 23:38:07.671672"], ["updated_at", "2021-03-02 23:38:07.671672"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClutch Create (0.4ms)[0m  [1m[32mINSERT INTO "clutches" ("stage", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["stage", "Stage 2"], ["brand", "Exedy Racing Clutch"], ["created_at", "2021-03-02 23:38:07.676067"], ["updated_at", "2021-03-02 23:38:07.676067"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClutch Create (0.4ms)[0m  [1m[32mINSERT INTO "clutches" ("stage", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["stage", "Stage 3"], ["brand", "SPEC Clutches"], ["created_at", "2021-03-02 23:38:07.680274"], ["updated_at", "2021-03-02 23:38:07.680274"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClutch Create (0.4ms)[0m  [1m[32mINSERT INTO "clutches" ("stage", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["stage", "Stage 4"], ["brand", "FXRacing Clutch Kits"], ["created_at", "2021-03-02 23:38:07.683938"], ["updated_at", "2021-03-02 23:38:07.683938"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/cars" for ::1 at 2021-03-02 17:38:36 -0600
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CarsController#index as HTML
+  [1m[36mCar Load (1.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/controllers/cars_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 1.5ms | ActiveRecord: 1.4ms | Allocations: 4805)
+
+
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEngine Create (3.0ms)[0m  [1m[32mINSERT INTO "engines" ("engine_code", "horsepower", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["engine_code", "Redtop SR20DET"], ["horsepower", "205HP"], ["created_at", "2021-03-02 23:40:57.758823"], ["updated_at", "2021-03-02 23:40:57.758823"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEngine Create (0.4ms)[0m  [1m[32mINSERT INTO "engines" ("engine_code", "horsepower", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["engine_code", "Notchtop SR20DET"], ["horsepower", "247HP"], ["created_at", "2021-03-02 23:40:57.767518"], ["updated_at", "2021-03-02 23:40:57.767518"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEngine Create (0.3ms)[0m  [1m[32mINSERT INTO "engines" ("engine_code", "horsepower", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["engine_code", "Silver Top 4AGE"], ["horsepower", "155HP"], ["created_at", "2021-03-02 23:40:57.771607"], ["updated_at", "2021-03-02 23:40:57.771607"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEngine Create (0.5ms)[0m  [1m[32mINSERT INTO "engines" ("engine_code", "horsepower", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["engine_code", "BP 1.8L"], ["horsepower", "140HP"], ["created_at", "2021-03-02 23:40:57.775435"], ["updated_at", "2021-03-02 23:40:57.775435"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClutch Create (0.7ms)[0m  [1m[32mINSERT INTO "clutches" ("stage", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["stage", "Stage 1"], ["brand", "SPEC Clutches"], ["created_at", "2021-03-02 23:40:57.789692"], ["updated_at", "2021-03-02 23:40:57.789692"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClutch Create (0.4ms)[0m  [1m[32mINSERT INTO "clutches" ("stage", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["stage", "Stage 2"], ["brand", "Exedy Racing Clutch"], ["created_at", "2021-03-02 23:40:57.795323"], ["updated_at", "2021-03-02 23:40:57.795323"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClutch Create (0.3ms)[0m  [1m[32mINSERT INTO "clutches" ("stage", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["stage", "Stage 3"], ["brand", "SPEC Clutches"], ["created_at", "2021-03-02 23:40:57.799711"], ["updated_at", "2021-03-02 23:40:57.799711"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClutch Create (0.3ms)[0m  [1m[32mINSERT INTO "clutches" ("stage", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["stage", "Stage 4"], ["brand", "FXRacing Clutch Kits"], ["created_at", "2021-03-02 23:40:57.803380"], ["updated_at", "2021-03-02 23:40:57.803380"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/cars" for ::1 at 2021-03-02 17:41:10 -0600
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CarsController#index as HTML
+  [1m[36mCar Load (1.9ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/controllers/cars_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 1.5ms | ActiveRecord: 1.9ms | Allocations: 4811)
+
+
+Started GET "/cars" for ::1 at 2021-03-02 17:41:12 -0600
+Processing by CarsController#index as HTML
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/controllers/cars_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.4ms | Allocations: 643)
+
+
+Started GET "/" for ::1 at 2021-03-02 17:41:28 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/djsmoothbackupmac/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/djsmoothbackupmac/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 12.3ms | Allocations: 295)
+Completed 200 OK in 23ms (Views: 16.3ms | ActiveRecord: 0.0ms | Allocations: 2286)
+
+
+Started GET "/" for ::1 at 2021-03-02 17:41:38 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/djsmoothbackupmac/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/djsmoothbackupmac/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 9.9ms | Allocations: 179)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.0ms | Allocations: 720)
+
+
+Started GET "/cars" for ::1 at 2021-03-02 17:41:44 -0600
+Processing by CarsController#index as HTML
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/controllers/cars_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 622)
+
+
+  [1m[36mCar Load (1.0ms)[0m  [1m[34mSELECT "cars".* FROM "cars" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/cars" for ::1 at 2021-03-02 17:44:13 -0600
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CarsController#index as HTML
+  [1m[36mCar Load (2.7ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/controllers/cars_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 1.6ms | ActiveRecord: 2.7ms | Allocations: 4805)
+
+
+Started GET "/cars/1" for ::1 at 2021-03-02 17:44:21 -0600
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCar Load (0.7ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:44:in `set_car'
+Completed 404 Not Found in 16ms (ActiveRecord: 8.8ms | Allocations: 1856)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Car with 'id'=1):
+  
+app/controllers/cars_controller.rb:44:in `set_car'
+Started GET "/engines" for ::1 at 2021-03-02 17:46:19 -0600
+Processing by EnginesController#index as HTML
+  [1m[36mEngine Load (1.0ms)[0m  [1m[34mSELECT "engines".* FROM "engines"[0m
+  ↳ app/controllers/engines_controller.rb:8:in `index'
+Completed 200 OK in 26ms (Views: 17.6ms | ActiveRecord: 7.5ms | Allocations: 5562)
+
+
+Started GET "/cars" for ::1 at 2021-03-02 17:46:36 -0600
+Processing by CarsController#index as HTML
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/controllers/cars_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.4ms | Allocations: 621)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/cars" for ::1 at 2021-03-02 17:47:24 -0600
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CarsController#index as HTML
+  [1m[36mCar Load (2.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/controllers/cars_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 1.7ms | ActiveRecord: 2.4ms | Allocations: 4811)
+
+
+Started GET "/cars" for ::1 at 2021-03-02 17:47:25 -0600
+Processing by CarsController#index as HTML
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/controllers/cars_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.4ms | Allocations: 643)
+
+
+Started GET "/clutchs" for ::1 at 2021-03-02 19:21:42 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/clutchs"):
+  
+Started GET "/clutches" for ::1 at 2021-03-02 19:21:49 -0600
+Processing by ClutchesController#index as HTML
+  [1m[36mClutch Load (1.4ms)[0m  [1m[34mSELECT "clutches".* FROM "clutches"[0m
+  ↳ app/controllers/clutches_controller.rb:8:in `index'
+Completed 200 OK in 102ms (Views: 100.5ms | ActiveRecord: 48.5ms | Allocations: 7797)
+
+
+Started GET "/differentials" for ::1 at 2021-03-02 19:22:07 -0600
+Processing by DifferentialsController#index as HTML
+  [1m[36mDifferential Load (12.2ms)[0m  [1m[34mSELECT "differentials".* FROM "differentials"[0m
+  ↳ app/controllers/differentials_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 3.0ms | ActiveRecord: 12.2ms | Allocations: 783)
+
+
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (24.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (56.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "driftcar_tuner_app_api_development"[0m
+  [1m[35m (23.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "driftcar_tuner_app_api_test"[0m
+  [1m[35m (361.6ms)[0m  [1m[35mCREATE DATABASE "driftcar_tuner_app_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (87.3ms)[0m  [1m[35mCREATE DATABASE "driftcar_tuner_app_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (40.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3384330133980964875)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEngines (20210302181820)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (23.1ms)[0m  [1m[35mCREATE TABLE "engines" ("id" bigserial primary key, "engine_code" character varying, "horsepower" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210302181820"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20210302203641)
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210302203641"]]
+  [1m[36mTRANSACTION (11.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCars (20210302203752)
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (25.3ms)[0m  [1m[35mCREATE TABLE "cars" ("id" bigserial primary key, "year" character varying, "make" character varying, "model" character varying, "engine_id" bigint NOT NULL, "clutch_id" bigint NOT NULL, "differential_id" bigint NOT NULL, "hand_brake_id" bigint NOT NULL, "rollcage_id" bigint NOT NULL, "suspension_id" bigint NOT NULL, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_10c903b46e"
+FOREIGN KEY ("engine_id")
+  REFERENCES "engines" ("id")
+, CONSTRAINT "fk_rails_91f4101df1"
+FOREIGN KEY ("clutch_id")
+  REFERENCES "clutches" ("id")
+, CONSTRAINT "fk_rails_903fbef22a"
+FOREIGN KEY ("differential_id")
+  REFERENCES "differentials" ("id")
+, CONSTRAINT "fk_rails_5646586b16"
+FOREIGN KEY ("hand_brake_id")
+  REFERENCES "hand_brakes" ("id")
+, CONSTRAINT "fk_rails_a7b5f9efd5"
+FOREIGN KEY ("rollcage_id")
+  REFERENCES "rollcages" ("id")
+, CONSTRAINT "fk_rails_17918361a6"
+FOREIGN KEY ("suspension_id")
+  REFERENCES "suspensions" ("id")
+, CONSTRAINT "fk_rails_7eccb46500"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3384330133980964875)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3384330133980964875)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCars (20210302203752)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (32.3ms)[0m  [1m[35mCREATE TABLE "cars" ("id" bigserial primary key, "year" character varying, "make" character varying, "model" character varying, "engine_id" bigint NOT NULL, "clutch_id" bigint NOT NULL, "differential_id" bigint NOT NULL, "hand_brake_id" bigint NOT NULL, "rollcage_id" bigint NOT NULL, "suspension_id" bigint NOT NULL, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_10c903b46e"
+FOREIGN KEY ("engine_id")
+  REFERENCES "engines" ("id")
+, CONSTRAINT "fk_rails_91f4101df1"
+FOREIGN KEY ("clutch_id")
+  REFERENCES "clutches" ("id")
+, CONSTRAINT "fk_rails_903fbef22a"
+FOREIGN KEY ("differential_id")
+  REFERENCES "differentials" ("id")
+, CONSTRAINT "fk_rails_5646586b16"
+FOREIGN KEY ("hand_brake_id")
+  REFERENCES "hand_brakes" ("id")
+, CONSTRAINT "fk_rails_a7b5f9efd5"
+FOREIGN KEY ("rollcage_id")
+  REFERENCES "rollcages" ("id")
+, CONSTRAINT "fk_rails_17918361a6"
+FOREIGN KEY ("suspension_id")
+  REFERENCES "suspensions" ("id")
+, CONSTRAINT "fk_rails_7eccb46500"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3384330133980964875)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-03-03 05:21:54.518144"], ["updated_at", "2021-03-03 05:21:54.518144"]]
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3384330133980964875)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateClutches (20210303050941)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (24.2ms)[0m  [1m[35mCREATE TABLE "clutches" ("id" bigserial primary key, "stage" character varying, "brand" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210303050941"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDifferentials (20210303051158)
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.2ms)[0m  [1m[35mCREATE TABLE "differentials" ("id" bigserial primary key, "name" character varying, "brand" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210303051158"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHandBrakes (20210303051226)
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (21.7ms)[0m  [1m[35mCREATE TABLE "hand_brakes" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210303051226"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRollcages (20210303051334)
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (19.8ms)[0m  [1m[35mCREATE TABLE "rollcages" ("id" bigserial primary key, "name" character varying, "brand" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210303051334"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSuspensions (20210303051359)
+  [1m[36mTRANSACTION (10.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.1ms)[0m  [1m[35mCREATE TABLE "suspensions" ("id" bigserial primary key, "name" character varying, "brand" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210303051359"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20210303052410)
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3384330133980964875)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (35.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "driftcar_tuner_app_api_development"[0m
+  [1m[35m (45.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "driftcar_tuner_app_api_test"[0m
+  [1m[35m (191.9ms)[0m  [1m[35mCREATE DATABASE "driftcar_tuner_app_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (62.9ms)[0m  [1m[35mCREATE DATABASE "driftcar_tuner_app_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (39.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (19.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3384330133980964875)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEngines (20210302181820)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (28.3ms)[0m  [1m[35mCREATE TABLE "engines" ("id" bigserial primary key, "engine_code" character varying, "horsepower" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210302181820"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateClutches (20210303050941)
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (22.6ms)[0m  [1m[35mCREATE TABLE "clutches" ("id" bigserial primary key, "stage" character varying, "brand" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210303050941"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDifferentials (20210303051158)
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (18.3ms)[0m  [1m[35mCREATE TABLE "differentials" ("id" bigserial primary key, "name" character varying, "brand" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210303051158"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHandBrakes (20210303051226)
+  [1m[36mTRANSACTION (10.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.7ms)[0m  [1m[35mCREATE TABLE "hand_brakes" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210303051226"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRollcages (20210303051334)
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.9ms)[0m  [1m[35mCREATE TABLE "rollcages" ("id" bigserial primary key, "name" character varying, "brand" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210303051334"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSuspensions (20210303051359)
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.0ms)[0m  [1m[35mCREATE TABLE "suspensions" ("id" bigserial primary key, "name" character varying, "brand" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210303051359"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20210303052410)
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210303052410"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCars (20210303052528)
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (44.7ms)[0m  [1m[35mCREATE TABLE "cars" ("id" bigserial primary key, "year" character varying, "make" character varying, "model" character varying, "engine_id" bigint NOT NULL, "clutch_id" bigint NOT NULL, "differential_id" bigint NOT NULL, "hand_brake_id" bigint NOT NULL, "rollcage_id" bigint NOT NULL, "suspension_id" bigint NOT NULL, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_10c903b46e"
+FOREIGN KEY ("engine_id")
+  REFERENCES "engines" ("id")
+, CONSTRAINT "fk_rails_91f4101df1"
+FOREIGN KEY ("clutch_id")
+  REFERENCES "clutches" ("id")
+, CONSTRAINT "fk_rails_903fbef22a"
+FOREIGN KEY ("differential_id")
+  REFERENCES "differentials" ("id")
+, CONSTRAINT "fk_rails_5646586b16"
+FOREIGN KEY ("hand_brake_id")
+  REFERENCES "hand_brakes" ("id")
+, CONSTRAINT "fk_rails_a7b5f9efd5"
+FOREIGN KEY ("rollcage_id")
+  REFERENCES "rollcages" ("id")
+, CONSTRAINT "fk_rails_17918361a6"
+FOREIGN KEY ("suspension_id")
+  REFERENCES "suspensions" ("id")
+, CONSTRAINT "fk_rails_7eccb46500"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE INDEX "index_cars_on_engine_id" ON "cars" ("engine_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE INDEX "index_cars_on_clutch_id" ON "cars" ("clutch_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_cars_on_differential_id" ON "cars" ("differential_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_cars_on_hand_brake_id" ON "cars" ("hand_brake_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_cars_on_rollcage_id" ON "cars" ("rollcage_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_cars_on_suspension_id" ON "cars" ("suspension_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE INDEX "index_cars_on_user_id" ON "cars" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210303052528"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (5.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-03-03 05:27:23.818231"], ["updated_at", "2021-03-03 05:27:23.818231"]]
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3384330133980964875)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3384330133980964875)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddForeignKeyToUsers2 (20210303052811)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "users" ADD "car_id" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210303052811"]]
+  [1m[36mTRANSACTION (10.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3384330133980964875)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEngine Create (12.7ms)[0m  [1m[32mINSERT INTO "engines" ("engine_code", "horsepower", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["engine_code", "Redtop SR20DET"], ["horsepower", "205HP"], ["created_at", "2021-03-03 05:29:24.083912"], ["updated_at", "2021-03-03 05:29:24.083912"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEngine Create (0.4ms)[0m  [1m[32mINSERT INTO "engines" ("engine_code", "horsepower", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["engine_code", "Notchtop SR20DET"], ["horsepower", "247HP"], ["created_at", "2021-03-03 05:29:24.101475"], ["updated_at", "2021-03-03 05:29:24.101475"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEngine Create (0.3ms)[0m  [1m[32mINSERT INTO "engines" ("engine_code", "horsepower", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["engine_code", "Silver Top 4AGE"], ["horsepower", "155HP"], ["created_at", "2021-03-03 05:29:24.105636"], ["updated_at", "2021-03-03 05:29:24.105636"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEngine Create (0.3ms)[0m  [1m[32mINSERT INTO "engines" ("engine_code", "horsepower", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["engine_code", "BP 1.8L"], ["horsepower", "140HP"], ["created_at", "2021-03-03 05:29:24.109494"], ["updated_at", "2021-03-03 05:29:24.109494"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClutch Create (1.0ms)[0m  [1m[32mINSERT INTO "clutches" ("stage", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["stage", "Stage 1"], ["brand", "SPEC Clutches"], ["created_at", "2021-03-03 05:29:24.122134"], ["updated_at", "2021-03-03 05:29:24.122134"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClutch Create (0.4ms)[0m  [1m[32mINSERT INTO "clutches" ("stage", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["stage", "Stage 2"], ["brand", "Exedy Racing Clutch"], ["created_at", "2021-03-03 05:29:24.126951"], ["updated_at", "2021-03-03 05:29:24.126951"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClutch Create (0.3ms)[0m  [1m[32mINSERT INTO "clutches" ("stage", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["stage", "Stage 3"], ["brand", "SPEC Clutches"], ["created_at", "2021-03-03 05:29:24.130971"], ["updated_at", "2021-03-03 05:29:24.130971"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClutch Create (0.3ms)[0m  [1m[32mINSERT INTO "clutches" ("stage", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["stage", "Stage 4"], ["brand", "FXRacing Clutch Kits"], ["created_at", "2021-03-03 05:29:24.134740"], ["updated_at", "2021-03-03 05:29:24.134740"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDifferential Create (1.1ms)[0m  [1m[32mINSERT INTO "differentials" ("name", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "limited slip"], ["brand", "Nismo"], ["created_at", "2021-03-03 05:29:24.146753"], ["updated_at", "2021-03-03 05:29:24.146753"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDifferential Create (0.4ms)[0m  [1m[32mINSERT INTO "differentials" ("name", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Mechanical LSD"], ["brand", "KAAS"], ["created_at", "2021-03-03 05:29:24.152056"], ["updated_at", "2021-03-03 05:29:24.152056"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHandBrake Create (1.0ms)[0m  [1m[32mINSERT INTO "hand_brakes" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Cable"], ["created_at", "2021-03-03 05:29:24.165341"], ["updated_at", "2021-03-03 05:29:24.165341"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHandBrake Create (0.4ms)[0m  [1m[32mINSERT INTO "hand_brakes" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Hydraulic"], ["created_at", "2021-03-03 05:29:24.170181"], ["updated_at", "2021-03-03 05:29:24.170181"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRollcage Create (2.3ms)[0m  [1m[32mINSERT INTO "rollcages" ("name", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "8 Point"], ["brand", "S&W"], ["created_at", "2021-03-03 05:29:24.189805"], ["updated_at", "2021-03-03 05:29:24.189805"]]
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRollcage Create (0.5ms)[0m  [1m[32mINSERT INTO "rollcages" ("name", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "10 Point"], ["brand", "S&W"], ["created_at", "2021-03-03 05:29:24.202231"], ["updated_at", "2021-03-03 05:29:24.202231"]]
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSuspension Create (6.8ms)[0m  [1m[32mINSERT INTO "suspensions" ("name", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Coil-Over System"], ["brand", "Ridetech"], ["created_at", "2021-03-03 05:29:24.221992"], ["updated_at", "2021-03-03 05:29:24.221992"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSuspension Create (0.4ms)[0m  [1m[32mINSERT INTO "suspensions" ("name", "brand", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Coil-Over Dualtech Adjustable"], ["brand", "HSD"], ["created_at", "2021-03-03 05:29:24.233200"], ["updated_at", "2021-03-03 05:29:24.233200"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/differentials" for ::1 at 2021-03-02 23:29:54 -0600
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DifferentialsController#index as HTML
+  [1m[36mDifferential Load (0.9ms)[0m  [1m[34mSELECT "differentials".* FROM "differentials"[0m
+  ↳ app/controllers/differentials_controller.rb:8:in `index'
+Completed 200 OK in 27ms (Views: 9.6ms | ActiveRecord: 7.9ms | Allocations: 5927)
+
+
+Started GET "/cars" for ::1 at 2021-03-02 23:30:02 -0600
+Processing by CarsController#index as HTML
+  [1m[36mCar Load (71.7ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/controllers/cars_controller.rb:8:in `index'
+Completed 200 OK in 79ms (Views: 1.7ms | ActiveRecord: 71.7ms | Allocations: 2407)
+
+
+Started GET "/clutches" for ::1 at 2021-03-02 23:30:14 -0600
+Processing by ClutchesController#index as HTML
+  [1m[36mClutch Load (0.7ms)[0m  [1m[34mSELECT "clutches".* FROM "clutches"[0m
+  ↳ app/controllers/clutches_controller.rb:8:in `index'
+Completed 200 OK in 29ms (Views: 20.8ms | ActiveRecord: 7.3ms | Allocations: 3369)
+
+
+Started GET "/rollcages" for ::1 at 2021-03-02 23:31:07 -0600
+Processing by RollcagesController#index as HTML
+  [1m[36mRollcage Load (1.1ms)[0m  [1m[34mSELECT "rollcages".* FROM "rollcages"[0m
+  ↳ app/controllers/rollcages_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 7.2ms | ActiveRecord: 6.7ms | Allocations: 3158)
+
+
+Started GET "/users" for ::1 at 2021-03-02 23:32:28 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 1.7ms | ActiveRecord: 2.2ms | Allocations: 825)
+
+
+Started GET "/users" for ::1 at 2021-03-02 23:34:57 -0600
+Processing by UsersController#index as */*
+  Parameters: {"review"=>{"title"=>"Hey! Say! JUMP", "content"=>"Hey! Say! BEST", "author"=>"Hey Say! 7"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 611)
+
+
+Started POST "/users" for ::1 at 2021-03-02 23:36:13 -0600
+Processing by UsersController#create as */*
+  Parameters: {"_json"=>[{"name"=>"Jorge"}], "user"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 2.7ms | Allocations: 147)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user
+Did you mean?  user
+               _json
+               controller
+               action):
+  
+app/controllers/users_controller.rb:49:in `user_params'
+app/controllers/users_controller.rb:18:in `create'
+Started PUT "/users" for ::1 at 2021-03-02 23:36:51 -0600
+  
+ActionController::RoutingError (No route matches [PUT] "/users"):
+  
+Started GET "/cars" for ::1 at 2021-03-02 23:37:10 -0600
+Processing by CarsController#index as */*
+  Parameters: {"_json"=>[{"name"=>"Jorge"}], "car"=>{}}
+  [1m[36mCar Load (0.5ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/controllers/cars_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 2.5ms | Allocations: 619)
+
+
+Started GET "/cars" for ::1 at 2021-03-02 23:37:31 -0600
+Processing by CarsController#index as HTML
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/controllers/cars_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 621)
+
+
+Started GET "/clutches" for ::1 at 2021-03-02 23:37:58 -0600
+Processing by ClutchesController#index as HTML
+  [1m[36mClutch Load (0.4ms)[0m  [1m[34mSELECT "clutches".* FROM "clutches"[0m
+  ↳ app/controllers/clutches_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.4ms | Allocations: 954)
+
+
+Started GET "/cars" for ::1 at 2021-03-02 23:38:11 -0600
+Processing by CarsController#index as HTML
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/controllers/cars_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.4ms | Allocations: 621)
+
+
+Started GET "/users/cars" for ::1 at 2021-03-02 23:38:28 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"cars"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44:in `set_user'
+Completed 404 Not Found in 19ms (ActiveRecord: 4.5ms | Allocations: 2036)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=cars):
+  
+app/controllers/users_controller.rb:44:in `set_user'
+Started GET "/cars/" for ::1 at 2021-03-02 23:38:38 -0600
+Processing by CarsController#index as HTML
+  [1m[36mCar Load (0.5ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/controllers/cars_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.5ms | Allocations: 740)
+
+
+Started GET "/clutches" for ::1 at 2021-03-02 23:39:00 -0600
+Processing by ClutchesController#index as */*
+  Parameters: {"_json"=>[{"name"=>"Jorge"}], "clutch"=>{}}
+  [1m[36mClutch Load (0.3ms)[0m  [1m[34mSELECT "clutches".* FROM "clutches"[0m
+  ↳ app/controllers/clutches_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 994)
+
+
+  [1m[36mCar Load (1.0ms)[0m  [1m[34mSELECT "cars".* FROM "cars" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3384330133980964875)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3384330133980964875)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/engines" for ::1 at 2021-03-02 23:47:30 -0600
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EnginesController#index as HTML
+  [1m[36mEngine Load (0.9ms)[0m  [1m[34mSELECT "engines".* FROM "engines"[0m
+  ↳ app/controllers/engines_controller.rb:8:in `index'
+Completed 200 OK in 24ms (Views: 8.2ms | ActiveRecord: 8.0ms | Allocations: 6110)
+
+
+Started GET "/cars" for ::1 at 2021-03-02 23:47:52 -0600
+Processing by CarsController#index as HTML
+  [1m[36mCar Load (1.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/controllers/cars_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 1.6ms | ActiveRecord: 1.2ms | Allocations: 2408)
+
+
+Started GET "/cars" for ::1 at 2021-03-02 23:58:38 -0600
+  [1m[35m (7.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CarsController#index as HTML
+  [1m[36mCar Load (1.9ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/controllers/cars_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 1.8ms | ActiveRecord: 1.9ms | Allocations: 4805)
+
+
+Started GET "/users" for ::1 at 2021-03-02 23:59:04 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.9ms | Allocations: 825)
+
+

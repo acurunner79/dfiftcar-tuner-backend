@@ -1,0 +1,2 @@
+class Clutch < ApplicationRecord
+end

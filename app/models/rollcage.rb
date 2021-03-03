@@ -1,0 +1,2 @@
+class Rollcage < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class HandBrake < ApplicationRecord
+end
