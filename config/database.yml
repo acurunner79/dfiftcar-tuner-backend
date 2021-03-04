@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: driftcar_tuner_app_api_production
-  username: driftcar_tuner_app_api
-  password: <%= ENV['DRIFTCAR_TUNER_APP_API_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
