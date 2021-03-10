@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Car.create([
+p Car.create([
     {year: "1992", make: "Nissan", model: "240SX", img: "https://c1.staticflickr.com/1/640/32546671776_bb11de408d_o.jpg",
     {year: "1997", make: "Nissan", model: "240SX", img: "https://i.pinimg.com/originals/01/a3/44/01a344ebb4c66e6a11d5d0a4cb6a1cac.jpg"},
     {year: "1987", make: "Toyota", model: "Corolla Sport GT-S", img: "https://i.ytimg.com/vi/8YXfVzzSYJE/maxresdefault.jpg"},
