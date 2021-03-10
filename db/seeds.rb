@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Car.create([
-    {year: "1992", make: "Nissan", model: "240SX", engine_id: 1, clutch_id: 1, differential_id: 1, hand_brake_id: 3, rollcage_id: 1, suspension_id: 1, user_id: 1},
-    {year: "1997", make: "Nissan", model: "240SX", engine_id: 1, clutch_id: 1, differential_id: 1, hand_brake_id: 3, rollcage_id: 1, suspension_id: 1, user_id: 2}
-    # {year: "1987", make: "Toyota", model: "Corolla Sport GT-S"},
-    # {year: "1999", make: "Mazda", model: "MX5 Miata"}
+    {year: "1992", make: "Nissan", model: "240SX", img: "https://c1.staticflickr.com/1/640/32546671776_bb11de408d_o.jpg", engine_id: 1, clutch_id: 1, differential_id: 1, hand_brake_id: 3, rollcage_id: 1, suspension_id: 1, user_id: 1},
+    {year: "1997", make: "Nissan", model: "240SX", img: "https://i.pinimg.com/originals/01/a3/44/01a344ebb4c66e6a11d5d0a4cb6a1cac.jpg", engine_id: 1, clutch_id: 1, differential_id: 1, hand_brake_id: 3, rollcage_id: 1, suspension_id: 1, user_id: 2},
+    {year: "1987", make: "Toyota", model: "Corolla Sport GT-S", img: "https://i.ytimg.com/vi/8YXfVzzSYJE/maxresdefault.jpg", engine_id: 1, clutch_id: 1, differential_id: 1, hand_brake_id: 3, rollcage_id: 1, suspension_id: 1, user_id: 1},
+    {year: "1999", make: "Mazda", model: "MX5 Miata", img: "https://i.pinimg.com/originals/7e/6a/8e/7e6a8eb012f7e96299bcad04e680ca43.jpg", engine_id: 1, clutch_id: 1, differential_id: 1, hand_brake_id: 3, rollcage_id: 1, suspension_id: 1, user_id: 1}
 ])
 
 Engine.create([
