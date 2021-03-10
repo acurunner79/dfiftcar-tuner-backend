@@ -47,7 +47,7 @@
 #     {name: "Coil-Over Dualtech Adjustable", brand: "HSD"}
 # ])
 
-# p User.create([
-#     {name: "Jorge"},
-#     {name: "Jane"}
-# ])
+p User.create([
+    {name: "Jorge"},
+    {name: "Jane"}
+])
